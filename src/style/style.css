@@ -1,0 +1,207 @@
+/*Fonte do titulo*/
+@font-face {
+    font-family: Barrio;
+    src: url(../fonts/font-home/BreeSerif-Regular.ttf)
+}   
+
+/*Fonte dos textos de navegação*/
+@font-face {
+    font-family: seasons;
+    src: url(../fonts/font-home/Demo_Fonts/Fontspring-DEMO-theseasons-bd.otf)
+} 
+
+@font-face {
+    font-family: marry;
+    src: url(/src/fonts/font-home/Merriweather-VariableFont_opsz\,wdth\,wght.ttf)
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+}
+
+/*Define as propriedades gerais da página*/
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    max-width: 1900px;
+    overflow-x: hidden;
+    min-width: 700px;
+    background-color: #F2F0EB;
+}
+
+/*Define as propriedades da nav-bar*/
+#nav-bar {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 70px;
+    background-color: white;
+    margin-top: 1.5rem;
+    border-radius: 35px;
+}
+
+/*Espaço especifico da logo*/
+#area-logo {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    max-width: 400px;
+    height: 100%;
+    overflow: hidden;
+}
+
+#area-logo img{
+    max-height: 150%;
+    width: fit-content;
+    transform: scale(160%);
+}
+
+
+/*Area para edição da area de navegação da nav-bar*/
+#area-navegacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%; 
+    height: 100%;   
+}
+
+#area-navegacao a{
+    font-family: seasons;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+
+/*esta div é a div pai da parte principal da pagina home*/
+.conteudo {
+    display: flex;
+    height: calc(100% - 70px);
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*Tudo que esta dentro da div area esquerda*/
+.area-esquerda {
+    display: flex;
+    width: 50%;
+    height: 70%;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 6rem;
+
+}
+
+.informacoes {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#h1-padrao {
+    font-family: Barrio;
+    max-width: 90%;
+    font-size: 65px;
+    font-weight: 400;
+}
+
+#h1-padrao span {
+    font-family: Barrio;
+}
+
+#barra-separar {
+    width: 200px;
+    height: 12px;
+    border-radius: 6px;
+    background-color: #FFD114;
+    margin-top: 2rem;
+}
+
+
+#texto-verde{
+    color: #034C1B;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.area-esquerda p {
+    padding-top: 3rem ;
+    font-family:marry;
+    font-size: 18px;
+}
+
+
+/*Div que cuida da area em que o botao FALE CONOSCO ficará*/
+.area-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 5rem;
+}
+
+.area-btn button {
+    background-color: #034C1B;
+    color: white;
+    width: 200px;
+    height: 45px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 20px;
+}   
+
+.area-direita {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: start;
+    padding-left: 10%;
+    width: 50%;
+}
+
+#img-milho{
+    height: 28rem;
+    width: fit-content;
+    z-index: 1;
+}
+
+#img-dinheiro{
+    height: 20rem;
+    width: fit-content;
+    position: absolute;
+    z-index: 0;
+    left: 35%;
+}
+
+.area-direita img {
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+
+.area-direita img:hover {
+    transform: scale(105%);
+}
+
+
+/*Area de edição para adequação a dispositivos com diferentes telas*/
+@media(max-width: 1100px) {
+    #area-logo img{
+        margin-left: 2rem;
+    }
+
+    #area-logo img{
+        transform: scale(130%);
+    }
+}
