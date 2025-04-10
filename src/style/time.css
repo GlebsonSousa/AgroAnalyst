@@ -27,6 +27,7 @@ body {
     background-color: #F2F0EB;
 }
 
+/*Define as propriedades da nav-bar*/
 #nav-bar {
     display: flex;
     position: fixed;
@@ -67,9 +68,18 @@ body {
 }
 
 #area-navegacao a{
-    font-family: seasons;
+    font-family: Barrio;
+    font-size: 18px;
     text-decoration: none;
     text-transform: capitalize;
+    color: black;
+    transition: ease-in-out 0.3s;
+    
+}
+
+#area-navegacao a:hover {
+    color: #056F33;
+
 }
 
 /*Fim da esilização da nav-bar*/
@@ -143,7 +153,7 @@ body {
 .area-direita h1{
     background-color: #0B1408;
     color: white;
-    padding: 5px;
+    padding: 5px 15px 5px 15px ;
     border-radius: 20px;
     font-family: barrio;
     font-size: 28px;

@@ -22,7 +22,7 @@
 
 body {
     display: flex;
-    align-items: center;
+    justify-self: center;
     min-height: 100vh;
     background-color: #F2F0EB;
 }
@@ -33,7 +33,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100vw;
-    max-width: 1900px;
+    max-width: 1200px;
     overflow-x: hidden;
     min-width: 700px;
     min-height: 100vh;
@@ -41,6 +41,7 @@ body {
     z-index: 0;
 }
 
+/*Define as propriedades da nav-bar*/
 #nav-bar {
     display: flex;
     position: fixed;
@@ -48,6 +49,7 @@ body {
     width: 90%;
     height: 70px;
     min-width: 700px;
+    max-width: 1200px;
     background-color: white;
     margin-top: 1rem;
     border-radius: 35px;
@@ -81,9 +83,18 @@ body {
 }
 
 #area-navegacao a{
-    font-family: seasons;
+    font-family: Barrio;
+    font-size: 18px;
     text-decoration: none;
     text-transform: capitalize;
+    color: black;
+    transition: ease-in-out 0.3s;
+    
+}
+
+#area-navegacao a:hover {
+    color: #056F33;
+
 }
 
 /*Fim da esilização da nav-bar*/
@@ -91,7 +102,7 @@ body {
 /*esta div é a div pai da parte principal da pagina home*/
 .conteudo {
     display: flex;
-    margin-top: 8rem;
+    margin-top: 10rem;
     height: calc(100vh - 70px);
     height: 90vh;
     max-height: 90vh;
@@ -218,13 +229,8 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
-    min-height: 90vh;
-    height: 100vh;
-    max-height: 100vh;
-    max-width: 1900px;
-    overflow-x: hidden;
-    min-width: 700px;
+    min-height: 100vh;
+    width: 100%;
     background-image: url("/src/img/trator3.jpeg");
 }
 
