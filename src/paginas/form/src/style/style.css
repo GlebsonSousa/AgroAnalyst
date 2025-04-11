@@ -78,7 +78,7 @@ body {
     font-weight: bold;
 }
 
-#caixa {
+.caixa {
     font-family: barrio;
     font-weight: 550;
     border-radius: 20px;
@@ -89,7 +89,7 @@ body {
     margin-bottom: 1rem;
 }
 
-#btn-continuar, #btn-limpar, #btn-confirmar, #btn-entrar{
+#btnContinuar, #btn-limpar, #btn-confirmar, #btn-entrar{
     justify-content: start;
     background-color: #056F33;
     color: rgb(255, 255, 255);
@@ -102,12 +102,12 @@ body {
     padding: 10px 50px;
 }
 
-#btn-continuar:hover, #btn-limpar:hover, #btn-confirmar:hover,  #btn-entrar:hover{
+#btnContinuar:hover, #btn-limpar:hover, #btn-confirmar:hover,  #btn-entrar:hover{
     background-color: #034C1B;
     cursor: pointer;
 }
 
-#btn-continuar:active, #btn-confirmar:active {
+#btnContinuar:active, #btn-confirmar:active {
     transform: scale(96%);
 }
 
