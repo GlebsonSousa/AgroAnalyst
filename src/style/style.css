@@ -99,7 +99,7 @@ body {
 .login-cadastro {
     display: flex;
     gap: 2rem;
-    width: 20%; /* Definindo a largura do contêiner como 20% */
+    width: 20%; 
     height: auto;
     align-items: center;
     margin-right: 3rem;
@@ -107,45 +107,35 @@ body {
 
 /* Estilizando o botão de login */
 #login {
-    background-color: green; /* Cor de fundo verde */
-    color: white; /* Cor do texto branco */
-    border: none; /* Removendo borda */
+    background-color: green; 
+    color: white; 
+    border: none; 
     padding: 10px 50px;
-    font-size: 16px; /* Tamanho da fonte */
-    cursor: pointer; /* Mudando o cursor para indicar que é clicável */
-    border-radius: 25px; /* Bordas arredondadas */
-    transition: background-color 0.3s ease; /* Transição suave na mudança de cor */
-    font-family: Barrio;
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 25px; 
+    transition: background-color 0.3s ease; 
 }
 
 /* Estilizando o botão de login quando o mouse passar sobre ele */
 #login:hover {
-    background-color: darkgreen; /* Cor de fundo mais escura quando o mouse passa por cima */
+    background-color: darkgreen; 
 }
 
 /* Estilizando o link de cadastro */
 #cadastro {
-    display: block; /* Fazendo o link ser exibido em um bloco (abaixo do botão) */
-    color: #515150; /* Cor do texto preto */
-    text-decoration: none; /* Removendo o sublinhado do link */
-    font-size: 20px; /* Tamanho da fonte */
+    display: block; 
+    color: #515150; 
+    text-decoration: none; 
+    font-size: 20px; 
     font-family: Barrio;
 }
 
-/* Alterando a cor do link quando o mouse passa por cima */
+
 #cadastro:hover {
-    color: green; /* Mudando a cor para verde quando o mouse passa por cima */
+    color: green; 
     cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
 
 /*esta div é a div pai da parte principal da pagina home*/
 .conteudo {
@@ -301,7 +291,6 @@ body {
 
     #img-milho{
         height: 15rem;
-
     }
     
     #img-dinheiro{
@@ -309,4 +298,6 @@ body {
     }
 
 }
+
+
 

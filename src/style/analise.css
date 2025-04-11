@@ -26,6 +26,7 @@ body {
     overflow-x: hidden;
     background-color: #F2F0EB;
     width: 100vw;
+    min-height: 100vh;
 }
 
 /*Define as propriedades da nav-bar*/
@@ -136,6 +137,7 @@ body {
     margin-top: 10rem;
     max-width: 1200px;
     padding: 2rem;
+    padding-bottom: 0;
     width: 90vw;
 }
 
@@ -339,3 +341,22 @@ width: 100% !important;
 height: 100% !important;
 }
   
+
+.rodape {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    flex-direction: row;background-color: black;
+    height: 50px;
+}
+
+.container-rodape {
+    display: flex;
+    color: white;
+    gap: 1rem;
+}
+
+.container-rodape a {
+    color: #838383;
+}
