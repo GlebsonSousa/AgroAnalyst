@@ -1,10 +1,23 @@
-// 📊 Gráfico de Precipitação Mensal com Chart.js
+// Gráfico de Precipitação Mensal com Chart.js
 document.addEventListener('DOMContentLoaded', () => {
+  
   const ctxChuva = document.getElementById('grafico-chuva')?.getContext('2d');
   const logo = document.getElementById('area-logo')
+  const cadastrar = document.getElementById('cadastro')
+  const login = document.getElementById('login')
 
- 
+
+  cadastrar.addEventListener('click', () => {
+    location.href = "/src/paginas/form/formulario.html"
+    console.log('chamou')
+  })
+
+  login.addEventListener('click', () => {
+      location.href = "/src/paginas/form/login.html"
+      console.log('chamou')
+  })
   
+
   if (!ctxChuva) return;
 
   const graficoChuva = new Chart(ctxChuva, {

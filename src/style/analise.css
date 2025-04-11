@@ -34,9 +34,9 @@ body {
     position: fixed;
     align-items: center;
     width: 90%;
-    max-width: 1200px;
     height: 70px;
     min-width: 700px;
+    max-width: 1200px;
     background-color: white;
     margin-top: 1rem;
     border-radius: 35px;
@@ -71,12 +71,11 @@ body {
 
 #area-navegacao a{
     font-family: Barrio;
-    font-size: 17px;
+    font-size: 18px;
     text-decoration: none;
     text-transform: capitalize;
-    color: #5c5c5c;
+    color: black;
     transition: ease-in-out 0.3s;
-    font-weight: 200;
     
 }
 
@@ -84,6 +83,51 @@ body {
     color: #056F33;
 
 }
+
+/* Estilizando o contêiner */
+.login-cadastro {
+    display: flex;
+    gap: 2rem;
+    width: 20%; /* Definindo a largura do contêiner como 20% */
+    height: auto;
+    align-items: center;
+    margin-right: 3rem;
+}
+
+/* Estilizando o botão de login */
+#login {
+    background-color: green; /* Cor de fundo verde */
+    color: white; /* Cor do texto branco */
+    border: none; /* Removendo borda */
+    padding: 10px 50px;
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Mudando o cursor para indicar que é clicável */
+    border-radius: 25px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease; /* Transição suave na mudança de cor */
+    font-family: Barrio;
+}
+
+/* Estilizando o botão de login quando o mouse passar sobre ele */
+#login:hover {
+    background-color: darkgreen; /* Cor de fundo mais escura quando o mouse passa por cima */
+}
+
+/* Estilizando o link de cadastro */
+#cadastro {
+    display: block; /* Fazendo o link ser exibido em um bloco (abaixo do botão) */
+    color: #515150; /* Cor do texto preto */
+    text-decoration: none; /* Removendo o sublinhado do link */
+    font-size: 20px; /* Tamanho da fonte */
+    font-family: Barrio;
+}
+
+/* Alterando a cor do link quando o mouse passa por cima */
+#cadastro:hover {
+    color: green; /* Mudando a cor para verde quando o mouse passa por cima */
+    cursor: pointer;
+}
+
+/*Fim da esilização da nav-bar*/
 
 .analise {
     display: flex;
