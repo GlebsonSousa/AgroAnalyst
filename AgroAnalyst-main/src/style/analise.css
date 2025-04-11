@@ -1,0 +1,293 @@
+/*Fonte do titulo*/
+@font-face {
+    font-family: Barrio;
+    src: url(/src/fonts/font-home/BreeSerif-Regular.ttf)
+}   
+
+/*Fonte dos textos de navegação*/
+@font-face {
+    font-family: seasons;
+    src: url(/src/fonts/font-home/Demo_Fonts/Fontspring-DEMO-theseasons-bd.otf)
+} 
+
+@font-face {
+    font-family: marry;
+    src: url(/src/fonts/font-home/Merriweather-VariableFont_opsz\,wdth\,wght.ttf)
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    background-color: #F2F0EB;
+    width: 100vw;
+}
+
+/*Define as propriedades da nav-bar*/
+#nav-bar {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    height: 70px;
+    min-width: 700px;
+    background-color: white;
+    margin-top: 1rem;
+    border-radius: 35px;
+    overflow: hidden;
+    z-index: 5;
+}
+
+/*Espaço especifico da logo*/
+#area-logo {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    max-width: 400px;
+    height: 100%;
+    overflow: hidden;
+}
+
+#area-logo img{
+    max-height: 150%;
+    width: fit-content;
+    transform: scale(160%);
+}
+
+/*Area para edição da area de navegação da nav-bar*/
+#area-navegacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%; 
+    height: 100%;   
+}
+
+#area-navegacao a{
+    font-family: Barrio;
+    font-size: 17px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #5c5c5c;
+    transition: ease-in-out 0.3s;
+    font-weight: 200;
+    
+}
+
+#area-navegacao a:hover {
+    color: #056F33;
+
+}
+
+.analise {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+    max-width: 1200px;
+    padding: 2rem;
+    width: 90vw;
+}
+
+/* Título e descrição */
+
+.titulo-analise {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 90%;
+    margin-bottom: 5rem;
+    gap: 1.5rem;
+}
+
+#titulo-analise-solo {
+    font-family: Barrio;
+    font-size: 65px;
+    color: #034C1B;
+    font-weight: 600;
+    width: 100%;
+}
+
+#descricao-analise-solo {
+    font-size: 20px;
+    color: #515150;
+    font-family: Barrio;
+    width: 80%;
+}
+
+/* Campo de busca e botão */
+.input-analise {
+    width: 100%;
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+#input-cidade {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+#botao-analisar-solo {
+    font-family: Barrio;
+    font-size: 16px;
+    background-color: #034C1B;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 400;
+    transition: all 0.3s;
+    cursor: pointer;
+    width: 200px;
+}
+
+#botao-analisar-solo:hover {
+    background-color: #056F33;
+}
+
+.separa {
+    display: flex;
+    align-items: center;
+    width: 10px;
+    height: 100%;
+}
+
+.separa span{
+    width: 2px;
+    height: 80%;
+    background-color: #b6b6b6;
+}
+
+/* Conteúdo em colunas */
+.conteudo-analise {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 2rem;
+    width: 90%;
+}
+
+.coluna-esquerda, .coluna-direita {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 50%;
+    height: 100%;
+}
+
+.coluna-esquerda p, .coluna-direita p,
+.coluna-direita li {
+    margin-bottom: 0.5rem;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 50%;
+    font-family: Barrio;
+    color: #034C1B;
+}
+
+.coluna-esquerda span {
+    font-family: marry;
+    font-size: 20px;
+    color: black;
+}
+
+.coluna-esquerda ul, .coluna-direita ul {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+    width: 50%;
+    font-size: 20px;
+    font-family: marry;
+}
+
+.coluna-direita ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coluna-direita li {
+    color: #515150;
+   
+}
+
+/* Título das culturas */
+#titulo-culturas {
+    margin-bottom: 1rem;
+    font-family: Barrio;
+    font-size: 28px;
+    color: #034C1B;
+}
+
+/* Imagem do mapa */
+#mapa-regiao {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+
+/*FIM DA PRIMEIRA PARTE*/
+
+
+/* 🌧️ Estilização da seção de chuva */
+#chuva {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #ffffff00;
+    border-radius: 12px;
+    text-align: center;
+    width: 100%;
+}
+
+#chuva h2 {
+font-size: 40px;
+margin-bottom: 20px;
+color: #2f6c2f;
+font-family: Barrio;
+font-weight: 800;
+}
+
+#chuva p{
+    font-size: 20px;
+    margin-bottom: 2rem;
+    font-family: Barrio;
+    width: 60%;
+    color: #515150;
+}
+
+.container-grafico-chuva {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto;
+    border: solid 2px #51515025;
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+#grafico-chuva {
+width: 100% !important;
+height: 100% !important;
+}
+  
