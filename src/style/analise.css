@@ -235,16 +235,20 @@ body {
 }
 
 /* Imagem do mapa */
-#mapa-regiao {
-    margin-top: 1rem;
+.area-mapa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    max-width: 100%;
-    border-radius: 10px;
+    height: 100%;
 }
 
+.area-mapa img {
+    max-height: 250px;
+    border-radius: 15px;
+}
 
 /*FIM DA PRIMEIRA PARTE*/
-
 
 /* 🌧️ Estilização da seção de chuva */
 #chuva {

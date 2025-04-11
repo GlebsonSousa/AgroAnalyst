@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mudaParaCadastro2 = document.getElementById('btn-continuar')
     const confirmar = document.getElementById('btn-confirmar')
 
-
     const cadastro1 = document.querySelector('.cadastro1')
     const cadastro2 = document.querySelector('.cadastro2')
     
@@ -22,4 +21,5 @@ document.addEventListener('DOMContentLoaded', () => {
     confirmar.addEventListener('click', () => {
         location.href = "/index.html"
     })
+
 })
