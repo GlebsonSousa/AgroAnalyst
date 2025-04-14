@@ -242,7 +242,7 @@ body {
 
 #img-milho{
     display: flex;
-    height: 32rem;
+    height: 28rem;
     width: fit-content;
     z-index: 1;
 }
@@ -252,7 +252,7 @@ body {
     width: fit-content;
     position: absolute;
     z-index: 0;
-    left: 30%;
+    left: 35%;
 }
 
 .area-direita img {

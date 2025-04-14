@@ -1,86 +1,95 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const voltar = document.getElementById('voltar');
-    const btnContinuar = document.getElementById('btnContinuar');
+    const btnContinuar = document.getElementById('btn-continuar');
     const btnConfirmar = document.getElementById('btn-confirmar');
+    const voltar = document.getElementById('voltar');
 
-    const cadastro1 = document.querySelector('.cadastro1');
-    const cadastro2 = document.querySelector('.cadastro2');
+    const mudaParaCadastro2 = document.getElementById('btn-continuar')
+    const confirmar = document.getElementById('btn-confirmar')
+    const cadastro1 = document.querySelector('.cadastro1')
+    const cadastro2 = document.querySelector('.cadastro2')
+    
 
-    // Voltar para a página inicial
-    if (voltar) {
-        voltar.addEventListener('click', () => {
-            location.href = "/index.html";
-        });
-    }
 
-    // Valida os campos da primeira etapa antes de mudar para a segunda
+    // CAMPOS DA PRIMEIRA ETAPA 
+    const nome = document.getElementById('txt_nome_usuario');
+    const email = document.getElementById('txt_email_usuario');
+    const dataNasc = document.getElementById('dte_nasc_usuario');
+    const cpf = document.getElementById('num_cpf_usuario');
+    const telefone = document.getElementById('num_tell_usuario');
+
+    // CAMPOS DA SEGUNDA ETAPA (corrigidos via JS porque no HTML está incompleto)
+    const senha = document.getElementById('txt_senha_usuario');
+    const confirmarSenha = document.getElementById('Confirme a senha');
+    const emailRecuperacao = document.getElementById('Txt_confirma_email');
+
+    // Botão CONTINUAR — valida a primeira parte
     if (btnContinuar) {
-        btnContinuar.addEventListener('click', (e) => {
-            e.preventDefault(); // Impede o envio do formulário
-
-            const formulario1 = cadastro1.querySelector('form');
-            const camposObrigatorios = formulario1.querySelectorAll('input[required]');
-            let formularioValido = true;
-
-            camposObrigatorios.forEach(campo => {
-                if (!campo.value.trim()) {
-                    campo.style.borderColor = 'red'; // Destaca o campo vazio
-                    formularioValido = false;
-                } else {
-                    campo.style.borderColor = ''; // Limpa a borda quando o campo é válido
-                }
-            });
-
-            if (!formularioValido) {
-                alert('Por favor, preencha todos os campos obrigatórios da primeira etapa.');
+        btnContinuar.addEventListener('click', () => {
+            if (
+                !nome.value.trim() ||
+                !email.value.trim() ||
+                !dataNasc.value.trim() ||
+                !cpf.value.trim() ||
+                !telefone.value.trim()
+            ){
+                alert("Preencha todos os campos da primeira etapa!");
                 return;
             }
 
-            // Se todos os campos estiverem válidos, oculta a primeira etapa e exibe a segunda
-            cadastro1.style.display = 'none';
-            cadastro2.style.display = 'flex';
+            console.log("Primeira etapa válida!");
+            mudaParaCadastro2.addEventListener('click', () => {
+                cadastro1.style.display = 'none';
+                cadastro2.style.display = 'flex';
+            })
         });
     }
 
-    // Valida a etapa de confirmação (segunda parte)
+    // Botão CONFIRMAR — valida a segunda parte
     if (btnConfirmar) {
         btnConfirmar.addEventListener('click', (e) => {
-            e.preventDefault(); // Impede o envio do formulário
+            e.preventDefault(); // impede o envio automático
 
-            const formulario2 = cadastro2.querySelector('form');
-            const camposObrigatorios = formulario2.querySelectorAll('input[required]');
-            let formularioValido = true;
-
-            camposObrigatorios.forEach(campo => {
-                if (!campo.value.trim()) {
-                    campo.style.borderColor = 'red'; // Destaca o campo vazio
-                    formularioValido = false;
-                } else {
-                    campo.style.borderColor = ''; // Limpa a borda quando o campo é válido
-                }
-            });
-
-            if (!formularioValido) {
-                alert('Por favor, preencha todos os campos obrigatórios da segunda etapa.');
+            if (
+                !senha.value.trim() ||
+                !confirmarSenha.value.trim() ||
+                !emailRecuperacao.value.trim()
+            ) {
+                alert("Preencha todos os campos da segunda etapa!");
                 return;
             }
 
-            // Verifica se as senhas batem
-            const senha = document.querySelector('[name="txt_senha_usuario"]');
-            const confirmarSenha = document.querySelector('[name="txt_senha_confirma"]');
+            console.log("Cadastro completo. Redirecionando...");
+            alert("Cadastro realizado com sucesso!");
+            window.location.href = "/index.html";
+        });
+    }
 
-            // Se as senhas coincidem, o cadastro está pronto e o redirecionamento ocorre
-            // Armazena as informações no Local Storage
-            const email = document.querySelector('[name="txt_email_usuario"]').value;
-            const senhaUsuario = senha.value;
-            
-            localStorage.setItem('usuarioEmail', email);  // Armazenando o email no localStorage
-            localStorage.setItem('usuarioSenha', senhaUsuario);  // Armazenando a senha no localStorage
-
-            alert('Cadastro realizado com sucesso!');
-
-            // Redireciona para a página inicial
-            location.href = "/index.html";
+    // Botão VOLTAR
+    if (voltar) {
+        voltar.addEventListener('click', () => {
+            window.location.href = "/index.html";
         });
     }
 });
+
+
+
+
+/*
+document.addEventListener('DOMContentLoaded', () => {
+
+    
+    
+
+    voltar.addEventListener('click', () => {
+        location.href = "/index.html"
+        console.log('chamou')
+    })
+
+    
+
+    confirmar.addEventListener('click', () => {
+        location.href = "/index.html"
+    })
+
+})*/

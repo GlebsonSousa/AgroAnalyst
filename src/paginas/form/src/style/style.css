@@ -89,7 +89,7 @@ body {
     margin-bottom: 1rem;
 }
 
-#btnContinuar, #btn-limpar, #btn-confirmar, #btn-entrar{
+#btn-continuar, #btn-limpar, #btn-confirmar, #btn-entrar{
     justify-content: start;
     background-color: #056F33;
     color: rgb(255, 255, 255);
@@ -102,12 +102,12 @@ body {
     padding: 10px 50px;
 }
 
-#btnContinuar:hover, #btn-limpar:hover, #btn-confirmar:hover,  #btn-entrar:hover{
+#btn-continuar:hover, #btn-limpar:hover, #btn-confirmar:hover,  #btn-entrar:hover{
     background-color: #034C1B;
     cursor: pointer;
 }
 
-#btnContinuar:active, #btn-confirmar:active {
+#btn-continuar:active, #btn-confirmar:active {
     transform: scale(96%);
 }
 
