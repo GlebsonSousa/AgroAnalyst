@@ -78,7 +78,7 @@ body {
     font-weight: bold;
 }
 
-.caixa {
+#caixa {
     font-family: barrio;
     font-weight: 550;
     border-radius: 20px;
