@@ -265,6 +265,49 @@ body {
 }
 
 
+
+
+/*APARTIR DAQUI ESTA A ESTILIZAÇÃO DO MONITORAMENTO*/
+
+.home-monitoramento {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+
+}
+
+.monitoramento-esquerda {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: auto;
+
+
+}
+
+.monitoramento-direita {
+    display: flex;
+    align-items: center;
+    width: 40%;
+} 
+
+.monitoramento-titulo-subtitulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.monitoramento-esquerda h2 {
+    font-family: Barrio;
+    max-width: 95%;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+
+
+
 /*Area de edição para adequação a dispositivos com diferentes telas*/
 @media(max-width: 1000px) {
     #area-logo img{
@@ -299,5 +342,5 @@ body {
 
 }
 
-
+/*FIM DA ESTILIZAÇÃO DA HOME*/
 
