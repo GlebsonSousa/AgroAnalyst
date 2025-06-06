@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Login</title>
+    <link rel="stylesheet" href="/src/paginas/form/src/style/style.css">
+    <script src="/src/js/cadastro.js"></script>
+</head>
+
+<body>
+    <!--definindo formulários-->
+
+    <div class="formulario">
+        <div class="cadastro1">
+            <div class="area-btn">
+                <img id="voltar" src="/src/img/voltar.png" alt="">
+            </div>
+            
+            <form>
+                <Fieldset>
+                    <legend id="cabecalho">Preencha seus dados abaixo:</legend>
+                    <center>
+                        <h1><b>Cadastro</b></h1>
+                    </center>
+
+                    <legend id="text"><b>Coloque seu nome:</b></legend><br>
+                    <input id="caixa" type="text" id="txt_nome_usuario" placeholder="Digite seu nome" size="60" maxlength="60" required="yes"><p>
+
+                    <legend id="text"><b>Coloque aqui seu e-mail:</b></legend><br>
+                    <input id="caixa" type="text" id="txt_email_usuario" placeholder="Informe seu email" size="60" maxlength="100" required="yes"><p>                        
+
+                    <legend id="text"><b>Informe sua data de nascimento:</b></legend><br>
+                    <input id="caixa" type="date" id="dte_nasc_usuario" placeholder="dd-mm-aaaa" required="yes"><p>
+                        
+                    <legend id="text"><b>Informe seu CPF:</b></legend><br>
+                    <input id="caixa" type="text" id="num_cpf_usuario" placeholder="Informe seu CPF" maxlength="11" required="yes"><p>
+
+                    <legend id="text"><b>Informe seu número de telefone:</b></legend><br>
+                    <input id="caixa" type="text" id="num_tell_usuario" placeholder="ex: (11) 95588-9462" maxlength="11" required="yes"><p>
+                    
+                    <input id="btn-continuar" type="button" id="btn_confirma" value="CONTINUAR"> &nbsp;&nbsp;
+                    <input id="btn-limpar" type="reset" value="LIMPAR">
+
+                </Fieldset>     
+            </form>
+        </div>
+
+        <div class="cadastro2">
+            <form>
+                <fieldset>
+                    <legend>Etapa de confirmação:</legend>
+                    <center>
+                        <h1><b>Continue seu Cadastro</b></h1>
+                    </center>
+
+                    <legend><b>Crie uma senha:</b></legend><br>
+                    <input id="caixa" type="password" placeholder="Digite sua senha" name="txt_senha_usuario" minlength="8" maxlength="72" required="yes"><p>
+
+                    <legend><b>Confirme sua senha:</b></legend><br>
+                    <input id="caixa" type="password" placeholder="Confirme a senha" ="txt_senha_confirma" value="" minlength="8" maxlength="72" required="yes"><p>
+
+                    <legend><b>Informe um e-mail de confirmação:</b></legend><br>
+                    <input id="caixa" type="email" placeholder="Informe um email para recuperação" name="Txt_confirma_email" value="" size="60" maxlength="60" required="yes"><p>
+                
+                    <input id="btn-confirmar" type="submit" value="CONFIRMAR"> &nbsp;&nbsp;
+                    <input id="btn-limpar" type="reset" value="LIMPAR"> 
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
