@@ -75,6 +75,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+
+  async function buscaDados(){
+    try {
+      const resposta = await fetch('https://meteoserver-h0u8.onrender.com/');
+      const data = await resposta.json();
+
+      if (data.erro) {
+        alert("servidor nao encontrado.");
+        return;
+      }else{
+        console.log(data)
+      }
+    }catch (erro) {
+      alert("Erro ao buscar o servidor. Tente novamente.");
+      console.error(erro);
+    }
+  }
+
   async function buscarPorCep() {
     const cepInput = document.getElementById("input-cidade").value.trim();
     const estadoSpan = document.getElementById("estado");
@@ -86,6 +104,11 @@ document.addEventListener('DOMContentLoaded', () => {
       alert("Digite um CEP válido no formato 00000-000 ou 00000000.");
       return;
     }
+    //---------------------------
+  
+    buscaDados()
+
+    //---------------------------
 
     const cepLimpo = cepInput.replace("-", "");
 
