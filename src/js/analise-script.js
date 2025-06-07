@@ -29,14 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
     botao.addEventListener("click", buscarPorCep);
   }
 
+  // Inicializa o gráfico vazio global para poder atualizar depois
   if (ctxChuva) {
-    new Chart(ctxChuva, {
+    window.graficoChuva = new Chart(ctxChuva, {
       type: 'bar',
       data: {
-        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+        labels: [],  // vai atualizar dinamicamente
         datasets: [{
           label: 'Precipitação (mm)',
-          data: [120, 110, 95, 85, 70, 60, 55, 65, 80, 100, 115, 125],
+          data: [],
           backgroundColor: '#2f6c2f',
           borderRadius: 10,
         }]
@@ -75,24 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
-  async function buscaDados(){
-    try {
-      const resposta = await fetch('https://meteoserver-h0u8.onrender.com/');
-      const data = await resposta.json();
-
-      if (data.erro) {
-        alert("servidor nao encontrado.");
-        return;
-      }else{
-        console.log(data)
-      }
-    }catch (erro) {
-      alert("Erro ao buscar o servidor. Tente novamente.");
-      console.error(erro);
-    }
-  }
-
   async function buscarPorCep() {
     const cepInput = document.getElementById("input-cidade").value.trim();
     const estadoSpan = document.getElementById("estado");
@@ -104,15 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
       alert("Digite um CEP válido no formato 00000-000 ou 00000000.");
       return;
     }
-    //---------------------------
-  
-    buscaDados()
-
-    //---------------------------
 
     const cepLimpo = cepInput.replace("-", "");
 
     try {
+      // Consulta API ViaCEP para obter dados do CEP
       const resposta = await fetch(`https://viacep.com.br/ws/${cepLimpo}/json/`);
       const dados = await resposta.json();
 
@@ -124,14 +103,61 @@ document.addEventListener('DOMContentLoaded', () => {
       const siglaUf = dados.uf;
       const nomeEstado = obterEstadoPorExtenso(siglaUf);
       const regiao = obterRegiaoPorSigla(siglaUf);
+      const cidadeNome = dados.localidade;
+      const codigoIbge = dados.ibge;
 
       estadoSpan.textContent = nomeEstado;
-      cidadeSpan.textContent = dados.localidade;
+      cidadeSpan.textContent = cidadeNome;
       regiaoSpan.textContent = regiao;
 
-      console.log(`Estado: ${nomeEstado}, Região: ${regiao}`);
+      console.log(`Cidade: ${cidadeNome}, Estado: ${nomeEstado}, Código IBGE: ${codigoIbge}`);
+
+      // Consultar a API meteorológica com o código IBGE para dados de chuva
+      const chuvaResp = await fetch(`https://meteoserver-h0u8.onrender.com/chuva?codigo_ibge=${codigoIbge}`);
+      const chuvaDados = await chuvaResp.json();
+
+      if (chuvaDados.erro) {
+        alert("Dados de chuva não encontrados para esta cidade.");
+        return;
+      }
+
+      console.log("Dados de chuva recebidos:", chuvaDados);
+
+      // Aqui tratamos os dados recebidos para evitar erro com dados indefinidos ou formato inesperado
+      const medias = chuvaDados.media_chuva_mensal;
+
+      if (!medias || !Array.isArray(medias) || medias.length === 0) {
+        alert("Dados de chuva incompletos ou inválidos.");
+        return;
+      }
+
+      // Ordena cronologicamente por ano e mês
+      medias.sort((a, b) => {
+        if (a.ano_mes < b.ano_mes) return -1;
+        if (a.ano_mes > b.ano_mes) return 1;
+        return 0;
+      });
+
+      // Prepara labels e dados para o gráfico
+      const labels = medias.map(m => `${m.nome_mes} ${m.ano_mes.slice(0, 4)}`);
+      const dadosChuva = medias.map(m => Number(m.media_mm) || 0);
+
+      // Alerta resumido para usuário
+      let textoMedias = `Média de chuva mensal em ${chuvaDados.cidade}:\n`;
+      medias.forEach(m => {
+        textoMedias += `${m.nome_mes} (${m.ano_mes.slice(0, 4)}): ${m.media_mm} mm\n`;
+      });
+      alert(textoMedias);
+
+      // Atualiza o gráfico
+      if (window.graficoChuva) {
+        window.graficoChuva.data.labels = labels;
+        window.graficoChuva.data.datasets[0].data = dadosChuva;
+        window.graficoChuva.update();
+      }
+
     } catch (erro) {
-      alert("Erro ao buscar o CEP. Tente novamente.");
+      alert("Erro ao buscar dados. Tente novamente.");
       console.error(erro);
     }
   }
@@ -185,5 +211,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     return "Região desconhecida";
   }
-
 });
